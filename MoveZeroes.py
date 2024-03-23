@@ -13,8 +13,6 @@ class Solution:
         for _ in range(count):
             nums.append(0)
         return nums
-
-
 # Example 1:
 
 # Input: nums = [0,1,0,3,12]
