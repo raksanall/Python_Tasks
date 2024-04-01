@@ -20,7 +20,21 @@ class Solution:
         for j in nums:
             arr+=[i+[j] for i in arr]
         return arr    
+# third way with backtracking:
 
+class Solution:
+    def subsets(self, nums: list[int]) -> list[list[int]]:
+        ans = []
+        def count(start, cur):
+            ans.append(cur[:])
+            for i in range(start, len(nums)):
+                cur.append(nums[i])
+                count(i + 1, cur)
+                cur.pop()
+        count(0, [])
+        return ans
+    
+    
 # Example 1:
 
 # Input: nums = [1,2,3]
